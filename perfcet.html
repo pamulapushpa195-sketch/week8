@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> <h3>Prime Number Checker</h3>
+    <h3>Perfect Number Checker</h3>
+    <input type="number" id="n" placeholder="Enter number">
+    <button onclick="check()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function check() {
+            let n = Number(document.getElementById("n").value);
+            let sum = 0;
+
+            for (let i = 1; i < n; i++) {
+                if (n % i == 0) {
+                    sum += i;
+                }
+            }
+
+            document.getElementById("result").innerHTML =
+                (n > 0 && sum == n)
+                ? "Perfect Number"
+                : "Not a Perfect Number";
+        }
+    </script>
+</body>
+</html>
